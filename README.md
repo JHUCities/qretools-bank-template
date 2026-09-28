@@ -25,7 +25,7 @@ DDI-Lifecycle 4.0.
 
 | Path | Holds |
 |---|---|
-| `questions/<topic>/<name>.yaml` | one question each; the topic folder is chosen when a question is first saved |
+| `questions/<folder>/<name>.yaml` | one question each; the folder is chosen when a question is first saved, and says nothing about the question's name |
 | `scales/<name>.yaml` | shared response scales (`labels:`), used by name from `responses:` |
 | `universes/<name>.yaml` | shared universes (`text:`), used by name from `universe:` |
 | `instructions/<name>.yaml` | shared instructions (`text:`), used by name from `instruction:` |
@@ -35,4 +35,5 @@ DDI-Lifecycle 4.0.
 questions record each option on it. The codes in `missing.yaml` are this template's
 example; use your own conventions.
 
-`questions/ex/ex_satisfaction.yaml` is an example to copy or delete.
+`questions/examples/service_satisfaction.yaml` is an example to copy or delete. Name
+questions and folders however your team prefers: qretools reads nothing into either.
