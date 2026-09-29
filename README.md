@@ -30,6 +30,7 @@ This repository is the template for new banks:
 | Path | Holds |
 |---|---|
 | `questions/<folder>/<name>.yaml` | one question each; the folder is chosen when a question is first saved, and says nothing about the question's name |
+| `concepts/<name>.yaml` | shared concepts (`label:`, `definition:`), used by name from `concept:` |
 | `scales/<name>.yaml` | shared response scales (`labels:`), used by name from `responses:` |
 | `universes/<name>.yaml` | shared universes (`text:`), used by name from `universe:` |
 | `instructions/<name>.yaml` | shared instructions (`text:`), used by name from `instruction:` |
@@ -41,16 +42,20 @@ example; use your own conventions.
 
 ## Shared values, and keeping the bank free of duplicates
 
-Four things can be written once and named from any question:
+Five things can be written once and named from any question:
 
 | Shared | Named from | Example here |
 |---|---|---|
+| a concept (what is measured) | `concept: service_satisfaction` | `concepts/service_satisfaction.yaml` and three more |
 | a response scale | `responses: satisfied5` | `scales/satisfied5.yaml`, `support4.yaml`, `support4_reversed.yaml` |
 | a universe | `universe: all_respondents` | `universes/all_respondents.yaml` |
 | an instruction | `instruction: select_one` | `instructions/select_one.yaml`, `select_all.yaml` |
 | the missing-value codes | every question, implicitly | `missing.yaml` |
 
-Anything else is written in the question. qretools points out repetition as you type:
+A concept is always shared: written as words in a question, qretools offers to make it
+a shared concept. Anything else is written in the question.
+
+qretools points out repetition as you type:
 
 - the same question text, response list, universe or instruction in two questions, or
   two shared scales with the same labels (a warning on each, linking to the other);
