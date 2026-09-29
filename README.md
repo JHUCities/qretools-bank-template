@@ -45,7 +45,7 @@ Four things can be written once and named from any question:
 
 | Shared | Named from | Example here |
 |---|---|---|
-| a response scale | `responses: satisfied5` | `scales/satisfied5.yaml` |
+| a response scale | `responses: satisfied5` | `scales/satisfied5.yaml`, `support4.yaml`, `support4_reversed.yaml` |
 | a universe | `universe: all_respondents` | `universes/all_respondents.yaml` |
 | an instruction | `instruction: select_one` | `instructions/select_one.yaml`, `select_all.yaml` |
 | the missing-value codes | every question, implicitly | `missing.yaml` |
@@ -64,8 +64,25 @@ differ, and the warning goes:
 
 ```yaml
 variant_of:
-  income_high: split ballot, lower income range
+  parks_spending: response-order experiment, options shown in reverse
 ```
 
-`questions/examples/service_satisfaction.yaml` is an example to copy or delete. Name
-questions and folders however your team prefers: qretools reads nothing into either.
+Where there is something to replace a duplicate with, the finding offers it as a button
+("Use `satisfied5`", "Use `days`"); one click, one undo. Naming a shared entry that
+doesn't exist yet offers to create it: give it a name and its text, and the question
+uses it at once. A shared entry you haven't saved yet can still be renamed.
+
+## Examples
+
+`questions/examples/` holds one of each kind of question, to copy or delete:
+
+| Example | Shows |
+|---|---|
+| `service_satisfaction.yaml` | one answer from a shared scale, with a shared universe and instruction |
+| `news_sources.yaml` | select all that apply, one variable per option (coded on `yesno01`) |
+| `library_visits.yaml` | a number with a range and a unit |
+| `service_comments.yaml` | an open answer with a length limit |
+| `parks_spending.yaml`, `parks_spending_reversed.yaml` | two questions alike on purpose (`variant_of`), on scales in opposite orders |
+
+Name questions and folders however your team prefers: qretools reads nothing into
+either.
