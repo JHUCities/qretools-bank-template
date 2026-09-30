@@ -31,6 +31,7 @@ This repository is the template for new banks:
 |---|---|
 | `questions/<folder>/<name>.yaml` | one question each; the folder is chosen when a question is first saved, and says nothing about the question's name |
 | `concepts/<name>.yaml` | shared concepts (`label:`, `definition:`), used by name from `concept:` |
+| `units/<name>.yaml` | shared units (`label:`, `definition:`), used by name from `unit:` under `number:` |
 | `scales/<name>.yaml` | shared response scales (`labels:`), used by name from `responses:` |
 | `universes/<name>.yaml` | shared universes (`text:`), used by name from `universe:` |
 | `instructions/<name>.yaml` | shared instructions (`text:`), used by name from `instruction:` |
@@ -42,18 +43,19 @@ example; use your own conventions.
 
 ## Shared values, and keeping the bank free of duplicates
 
-Five things can be written once and named from any question:
+Six things can be written once and named from any question:
 
 | Shared | Named from | Example here |
 |---|---|---|
 | a concept (what is measured) | `concept: service_satisfaction` | `concepts/service_satisfaction.yaml` and three more |
+| a unit | `number: { unit: days }` | `units/days.yaml`, `years.yaml`, `dollars.yaml` |
 | a response scale | `responses: satisfied5` | `scales/satisfied5.yaml`, `support4.yaml`, `support4_reversed.yaml` |
 | a universe | `universe: all_respondents` | `universes/all_respondents.yaml` |
 | an instruction | `instruction: select_one` | `instructions/select_one.yaml`, `select_all.yaml` |
 | the missing-value codes | every question, implicitly | `missing.yaml` |
 
-A concept is always shared: written as words in a question, qretools offers to make it
-a shared concept. Anything else is written in the question.
+Concepts and units are always shared: written as words in a question, qretools offers
+to make them shared. Anything else is written in the question.
 
 qretools points out repetition as you type:
 
@@ -61,7 +63,6 @@ qretools points out repetition as you type:
   two shared scales with the same labels (a warning on each, linking to the other);
 - a response list, universe or instruction written out that a shared one already says
   ("use the name");
-- a unit spelled two ways (`days` and `Days`);
 - a question worded much like another (a note, quoting the other).
 
 When two questions are alike on purpose, say so in either of them, with why they
