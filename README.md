@@ -4,6 +4,8 @@ Survey questions and their documentation, one YAML file per question, edited wit
 [qretools](https://jhucities.github.io/qretools/), which elaborates them to
 DDI-Lifecycle 4.0.
 
+What qretools is and how it works: [About qretools](https://github.com/JHUCities/qretools#readme).
+
 This repository is the template for new banks:
 <https://github.com/JHUCities/qretools-bank-template>. Start one with
 [Use this template](https://github.com/JHUCities/qretools-bank-template/generate).
