@@ -38,6 +38,11 @@ This repository is the template for new banks:
 | `universes/<name>.yaml` | shared universes (`text:`), used by name from `universe:` |
 | `instructions/<name>.yaml` | shared instructions (`text:`), used by name from `instruction:` |
 | `missing.yaml` | the bank's missing-value codes (`labels:`) |
+| `bank.yaml` | what the bank says about itself: the DDI agency its items are published under (`agency:`) |
+
+Replace `org.example` in `bank.yaml` with your own DDI agency (letters, digits and
+hyphens, in parts joined by dots, such as `edu.example.survey-lab`): without one, the
+bank's DDI can't be exported.
 
 `scales/yesno01.yaml` must stay as it is (`0: No`, `1: Yes`): select-all-that-apply
 questions record each option on it. The codes in `missing.yaml` are this template's
