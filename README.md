@@ -1,5 +1,10 @@
 # A question bank for qretools
 
+> **Retired.** New workspaces start from
+> [JHUCities/qretools-template](https://github.com/JHUCities/qretools-template), which
+> holds these examples as its bank. This repository is kept, read only, so anything
+> that imports it at `@v1` still reads.
+
 Survey questions and their documentation, one YAML file per question, edited with
 [qretools](https://jhucities.github.io/qretools/), which elaborates them to
 DDI-Lifecycle 4.0.
